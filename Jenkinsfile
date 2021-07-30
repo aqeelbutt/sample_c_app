@@ -12,7 +12,7 @@ node("worker1") {
 			    echo "Checked Successfully - Please see output for Results"
 			}
 
-	stage("Run Stage2") {
+#	stage("Run Stage2") {
 #			sh """
 #				cppcheck --xml --xml-version=2 . 2> cppcheck.xml
 #			"""
