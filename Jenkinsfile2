@@ -14,6 +14,7 @@ stage("Checkout code") {
       always {
           scanForIssues tool: cppCheck(pattern: 'cppcheck.xml')
           publishCppcheck pattern:'cppcheck.xml'
-        }
+	        }
+             }
+	}
     }
-}
