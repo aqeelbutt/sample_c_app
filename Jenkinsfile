@@ -10,12 +10,12 @@ node("worker1") {
 				cppcheck --xml --xml-version=2 . 2> cppcheck.xml
 			"""
 			    echo "Checked Successfully - Please see output for Results"
-	
-	stage('CppCheck Result') {
-          steps {                       
-        publishCppcheck pattern:'output/bin/Release/cppcheck.xml'
-      				}    
+	post {
+        always {
+           // scanForIssues tool: cppCheck(pattern: 'cppcheck.xml')
+            publishCppcheck pattern:'cppcheck.xml'
+        }
+    }   
 			}
-		}
 
 	}
