@@ -12,8 +12,7 @@ stage("Checkout code") {
 			    echo "Checked Successfully - Please see output for Results"
   stage('publish') {
       always {
-          scanForIssues tool: cppCheck(pattern: 'cppcheck.xml')
-          publishCppcheck pattern:'cppcheck.xml'
+          publishCppcheck pattern:'/var/lib/jenkins/workspace/sample-c/cppcheck.xml'
 	        }
              }
 	}
