@@ -12,12 +12,11 @@ node("worker1") {
 			    echo "Checked Successfully - Please see output for Results"
 			}
 
-	stage("Run Twistlock") {
-#        twistlockPublish(
-#            dockerAddress: "unix:///var/run/docker.sock",
-#            ignoreImageBuildTime: true,
-#            image: "${NEXUS_URL}/${DOCKER_IMAGE}:latest",
-#            logLevel: "true",
-#            timeout: 10)
-	}
+	stage("Run Stage2") {
+#			sh """
+#				cppcheck --xml --xml-version=2 . 2> cppcheck.xml
+#			"""
+#			    echo "Checked Successfully - Please see output for Results"
+#			}
+
 }
