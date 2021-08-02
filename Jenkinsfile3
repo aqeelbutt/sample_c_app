@@ -12,14 +12,6 @@ pipeline {
         NEXUS_REPOSITORY = "ncwdg-maven"
         NEXUS_CREDENTIAL_ID = "ncwdg-sonar-creds"
     }
-    stages {
-        stage("Clone code from VCS") {
-            steps {
-                script {
-                    git 'git@github.com:aqeelbutt/sample_c_app.git';
-                }
-            }
-        }
         stage("Maven Build") {
             steps {
                 script {
