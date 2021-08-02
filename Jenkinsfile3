@@ -12,6 +12,9 @@ pipeline {
         NEXUS_REPOSITORY = "ncwdg-maven"
         NEXUS_CREDENTIAL_ID = "ncwdg-sonar-creds"
     }
+    stage("Checkout code") {
+        checkout scm
+	}
         stage("Maven Build") {
             steps {
                 script {
