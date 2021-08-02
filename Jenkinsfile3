@@ -4,11 +4,12 @@ pipeline {
 	    maven 'ncwdg-maven'
 	}
 	stages{
-	      stage('Build'){
-		      steps{
-			       sh script: 'mvn clean package'
-			  }
-		  }
+	      stage('Build and Test'){
+		dir ('build') {
+        	  sh "cmake ../ && cmake --build ."
+        	}
+             }	  
+	}
 		  stage('Upload War To Nexus'){
 		      steps{
 			       	nexusArtifactUploader artifacts: [
@@ -29,5 +30,4 @@ pipeline {
      			  }
   			}
 		    }
-                 }
      
